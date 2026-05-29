@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHAFTEX | Cerramiento de ascensores en seco</title>
+  <meta name="description" content="Cerramiento profesional de frentes de ascensores con sistema seco y panel PIR. Más rápido, limpio y seguro para obras e instaladores." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0b2a4a;
+      --blue:#0f5ea8;
+      --orange:#f47b20;
+      --ink:#172033;
+      --muted:#667085;
+      --line:#e6eaf0;
+      --soft:#f7f9fc;
+      --white:#ffffff;
+      --radius:18px;
+      --shadow:0 18px 45px rgba(16,24,40,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{display:block;max-width:100%}
+    .container{width:min(1120px,calc(100% - 40px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{height:74px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand img{height:48px;width:auto}
+    .navlinks{display:flex;gap:26px;color:#475467;font-size:14px;font-weight:600}
+    .navlinks a:hover{color:var(--navy)}
+    .nav-cta{padding:11px 17px;border:1px solid var(--navy);border-radius:999px;color:var(--navy);font-size:14px;font-weight:700}
+    .nav-cta:hover{background:var(--navy);color:#fff}
+
+    section{padding:88px 0}
+    .hero{padding:92px 0 78px;background:linear-gradient(180deg,#ffffff 0%,#f8fafc 100%);border-bottom:1px solid var(--line)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:62px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;color:var(--blue);font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+    .eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--orange)}
+    h1{margin:0 0 24px;color:var(--navy);font-size:clamp(42px,6vw,72px);line-height:.98;letter-spacing:-.055em}
+    .lead{margin:0;max-width:650px;color:#475467;font-size:20px;line-height:1.55}
+    .actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:999px;font-weight:750;border:1px solid transparent;transition:.18s ease}
+    .btn-primary{background:var(--navy);color:white;box-shadow:0 14px 28px rgba(11,42,74,.16)}
+    .btn-primary:hover{transform:translateY(-1px)}
+    .btn-secondary{background:white;border-color:var(--line);color:var(--navy)}
+    .hero-image{border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#f2f4f7}
+    .hero-image img{width:100%;aspect-ratio:4/3;object-fit:cover}
+    .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:36px;max-width:680px}
+    .metric{padding:18px 16px;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .metric b{display:block;color:var(--navy);font-size:18px}.metric span{color:var(--muted);font-size:13px;font-weight:500}
+
+    .section-head{max-width:760px;margin:0 0 38px}
+    .section-head.center{text-align:center;margin-left:auto;margin-right:auto}
+    .section-kicker{margin:0 0 10px;color:var(--blue);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.09em}
+    h2{margin:0 0 14px;color:var(--navy);font-size:clamp(31px,4vw,46px);line-height:1.08;letter-spacing:-.04em}
+    .section-head p{margin:0;color:var(--muted);font-size:18px}
+
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{padding:26px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:0 10px 25px rgba(16,24,40,.04)}
+    .card-number{margin-bottom:18px;color:var(--orange);font-weight:800;font-size:14px}
+    .card h3{margin:0 0 10px;color:var(--navy);font-size:20px;letter-spacing:-.02em}
+    .card p{margin:0;color:var(--muted)}
+
+    .soft{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .split{display:grid;grid-template-columns:.95fr 1.05fr;gap:54px;align-items:center}
+    .image-panel{border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+    .image-panel img{width:100%;aspect-ratio:4/3;object-fit:cover}
+    .list{display:grid;gap:14px;margin-top:26px}
+    .list-item{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .check{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#eef8f1;color:#16833a;font-weight:900;font-size:14px}
+    .list-item b{color:var(--navy)}
+
+    .comparison{border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+    .comparison-row{display:grid;grid-template-columns:1fr 1fr}
+    .comparison-row>div{padding:20px 24px;border-bottom:1px solid var(--line)}
+    .comparison-row>div:first-child{border-right:1px solid var(--line)}
+    .comparison-head>div{background:var(--navy);color:#fff;font-weight:800;border-bottom:none}
+    .traditional{color:#6b7280}.solution{color:#0b6752;font-weight:700}
+    .notice{padding:22px 24px;background:#fffaf3;color:#7a4100;font-weight:700;border-top:1px solid #f4dfbd}
+
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:steps}
+    .step{padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:#fff}
+    .step:before{counter-increment:steps;content:"0" counter(steps);display:block;margin-bottom:24px;color:var(--orange);font-weight:800;font-size:14px}
+    .step h3{margin:0 0 8px;color:var(--navy)}
+    .step p{margin:0;color:var(--muted);font-size:15px}
+
+    .projects{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .project{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 10px 25px rgba(16,24,40,.05)}
+    .project.wide{grid-column:span 2}
+    .project img{width:100%;height:230px;object-fit:cover;background:#f2f4f7}
+    .project span{display:block;padding:16px 18px;color:var(--navy);font-weight:750}
+
+    .quote{padding:42px;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:var(--shadow)}
+    .quote small{display:block;margin-bottom:12px;color:var(--blue);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+    .quote p{margin:0;color:var(--navy);font-size:clamp(23px,3vw,34px);line-height:1.25;letter-spacing:-.03em}
+
+    .contact{background:#071b31;color:#fff}
+    .contact .section-kicker,.contact h2{color:#fff}.contact .section-head p{color:#bfd0df}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;align-items:start}
+    .contact-box,.form-card{padding:30px;border:1px solid rgba(255,255,255,.14);border-radius:22px;background:rgba(255,255,255,.055)}
+    .contact-box h3,.form-card h3{margin:0 0 12px;font-size:24px;color:#fff}
+    .contact-box p{color:#bfd0df;margin:0 0 20px}
+    .contact-link{display:block;padding:16px 0;border-top:1px solid rgba(255,255,255,.12);font-weight:750}
+    .contact-link small{display:block;color:#bfd0df;font-weight:500}
+    .form{display:grid;gap:14px}
+    .field{display:grid;gap:7px}.field label{color:#d7e4ee;font-weight:650;font-size:14px}
+    input,select,textarea{width:100%;padding:14px 15px;border:1px solid rgba(255,255,255,.16);border-radius:14px;background:rgba(255,255,255,.08);color:#fff;font:inherit;outline:none}
+    option{color:#172033;background:#fff} textarea{min-height:118px;resize:vertical}
+    input::placeholder,textarea::placeholder{color:#9fb4c7}
+    button{border:0;cursor:pointer;padding:15px 20px;border-radius:999px;background:var(--orange);color:#fff;font-weight:800;font-size:16px}
+    .fineprint{margin:4px 0 0;color:#9fb4c7;font-size:13px}
+    .footer{padding:26px 0;background:#061527;color:#9fb4c7;text-align:center;font-size:14px}
+
+    @media (max-width:900px){
+      .navlinks{display:none}.hero-grid,.split,.contact-grid{grid-template-columns:1fr}.grid-3,.steps{grid-template-columns:1fr 1fr}.projects{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:1fr}.hero{padding-top:62px}.section-head{text-align:left}
+    }
+    @media (max-width:560px){
+      .container{width:min(100% - 28px,1120px)}.nav{height:68px}.brand img{height:40px}.nav-cta{display:none}section{padding:64px 0}.grid-3,.steps,.projects{grid-template-columns:1fr}.project.wide{grid-column:auto}.comparison-row{grid-template-columns:1fr}.comparison-row>div:first-child{border-right:0}.actions{flex-direction:column}.btn{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Inicio SHAFTEX"><img src="assets/logo-shaftex.png" alt="SHAFTEX - El frente del ascensor, resuelto."></a>
+      <nav class="navlinks" aria-label="Navegación principal">
+        <a href="#problema">Problema</a>
+        <a href="#solucion">Solución</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#obras">Obras</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <a class="nav-cta" href="#contacto">Solicitar cotización</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Cerramiento de ascensores en seco</div>
+          <h1>El frente del ascensor, resuelto.</h1>
+          <p class="lead">Sistema profesional de cerramiento en seco con panel PIR para obras, propietarios e instaladores. Una solución más rápida, limpia y segura para continuar el montaje sin complicaciones.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#contacto">Solicitar cotización</a>
+            <a class="btn btn-secondary" href="#solucion">Ver solución</a>
+          </div>
+          <div class="metrics">
+            <div class="metric"><b>Rápido</b><span>Optimiza tiempos de obra</span></div>
+            <div class="metric"><b>Seco</b><span>Menos obra húmeda</span></div>
+            <div class="metric"><b>Seguro</b><span>Protege el equipo</span></div>
+          </div>
+        </div>
+        <div class="hero-image"><img src="assets/hero.jpg" alt="Cerramiento de ascensor realizado con paneles"></div>
+      </div>
+    </section>
+
+    <section id="problema">
+      <div class="container">
+        <div class="section-head center">
+          <p class="section-kicker">El problema</p>
+          <h2>Cuando el frente del ascensor atrasa toda la obra.</h2>
+          <p>Los sistemas tradicionales suelen implicar tiempos extensos, coordinación compleja entre gremios, riesgos sobre el equipo instalado y costos adicionales.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card"><div class="card-number">01</div><h3>Tiempos largos</h3><p>La obra húmeda puede retrasar la entrega del frente y afectar el cronograma general.</p></article>
+          <article class="card"><div class="card-number">02</div><h3>Riesgo de daños</h3><p>Intervenciones no especializadas pueden generar daños, retrabajos y conflictos de responsabilidad.</p></article>
+          <article class="card"><div class="card-number">03</div><h3>Costos ocultos</h3><p>Más horas de mano de obra, asistencia técnica posterior y pérdida de eficiencia en obra.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="solucion" class="soft">
+      <div class="container split">
+        <div class="image-panel"><img src="assets/beneficios.jpg" alt="Técnico trabajando en frente de ascensor"></div>
+        <div>
+          <div class="section-head">
+            <p class="section-kicker">Nuestra solución</p>
+            <h2>Cerramiento en seco, simple y profesional.</h2>
+            <p>SHAFTEX permite entregar el frente cerrado en menos tiempo, con menor interferencia entre gremios y mayor protección del equipo.</p>
+          </div>
+          <div class="list">
+            <div class="list-item"><span class="check">✓</span><div><b>Para instaladores:</b> evita interrupciones, daños y retrabajos durante el montaje.</div></div>
+            <div class="list-item"><span class="check">✓</span><div><b>Para propietarios:</b> reduce mano de obra húmeda y mejora la coordinación de obra.</div></div>
+            <div class="list-item"><span class="check">✓</span><div><b>Para constructoras:</b> aporta un proceso más ordenado, verificable y eficiente.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head center">
+          <p class="section-kicker">Comparativo</p>
+          <h2>Una alternativa moderna al sistema tradicional.</h2>
+        </div>
+        <div class="comparison">
+          <div class="comparison-row comparison-head"><div>Sistema tradicional</div><div>Nuestra solución</div></div>
+          <div class="comparison-row"><div class="traditional">Mano de obra húmeda</div><div class="solution">Sistema seco con panel PIR</div></div>
+          <div class="comparison-row"><div class="traditional">Tiempos prolongados</div><div class="solution">Instalación rápida</div></div>
+          <div class="comparison-row"><div class="traditional">Riesgo de daño al equipo</div><div class="solution">Protección del equipo instalado</div></div>
+          <div class="comparison-row"><div class="traditional">Personal no especializado</div><div class="solution">Especialistas en ascensores</div></div>
+          <div class="notice">Se verifica la instalación de puertas antes y después del cerramiento para asegurar una correcta ejecución de la etapa.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso" class="soft">
+      <div class="container">
+        <div class="section-head center">
+          <p class="section-kicker">Proceso</p>
+          <h2>Cuatro pasos claros.</h2>
+          <p>Un flujo de trabajo pensado para reducir fricción y dejar la obra lista para continuar.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><h3>Recepción</h3><p>Acta de recepción del equipo y evaluación inicial.</p></article>
+          <article class="step"><h3>Corrección</h3><p>Ajuste de marcos por parte del instalador, si corresponde.</p></article>
+          <article class="step"><h3>Cerramiento</h3><p>Ejecución en seco con paneles PIR.</p></article>
+          <article class="step"><h3>Entrega</h3><p>Frente cerrado y listo para continuar el montaje.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="obras">
+      <div class="container">
+        <div class="section-head center">
+          <p class="section-kicker">Obras</p>
+          <h2>Trabajos realizados.</h2>
+          <p>Aplicaciones en proyectos de Punta del Este y obras en desarrollo.</p>
+        </div>
+        <div class="projects">
+          <article class="project wide"><img src="assets/cipriani.jpg" alt="Obra Cipriani Punta del Este"><span>Cipriani — Punta del Este</span></article>
+          <article class="project"><img src="assets/torre.jpg" alt="Torre del Este Punta del Este"><span>Torre del Este</span></article>
+          <article class="project"><img src="assets/brava.jpg" alt="Brava Wave Punta del Este"><span>Brava Wave</span></article>
+          <article class="project"><img src="assets/sense1.jpg" alt="Sense Punta del Este"><span>Sense</span></article>
+          <article class="project wide"><img src="assets/sense2.jpg" alt="Detalles de terminación"><span>Detalles de terminación</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft">
+      <div class="container quote">
+        <small>Testimonio esperado</small>
+        <p>“Desde que implementamos este sistema, ganamos semanas en obra y evitamos reclamos con la empresa de ascensores.”</p>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact">
+      <div class="container">
+        <div class="section-head center">
+          <p class="section-kicker">Contacto</p>
+          <h2>Solicitá una cotización.</h2>
+          <p>Completá la hoja de contacto y abrí la consulta directamente por WhatsApp.</p>
+        </div>
+        <div class="contact-grid">
+          <aside class="contact-box">
+            <h3>Contacto directo</h3>
+            <p>Para constructoras, instaladores, propietarios y obras que necesiten resolver el frente del ascensor de forma profesional.</p>
+            <a class="contact-link" href="tel:+59895333028">095 333 028 <small>Llamar o WhatsApp</small></a>
+            <a class="contact-link" href="tel:+59896959257">096 959 257 <small>Llamar o WhatsApp</small></a>
+          </aside>
+          <div class="form-card">
+            <h3>Hoja de contacto</h3>
+            <form class="form" onsubmit="sendWhatsApp(event)">
+              <div class="field"><label for="nombre">Nombre y empresa</label><input id="nombre" required placeholder="Constructora / instalador / propietario"></div>
+              <div class="field"><label for="telefono">Teléfono</label><input id="telefono" required placeholder="09X XXX XXX"></div>
+              <div class="field"><label for="obra">Tipo de obra</label><select id="obra"><option>Edificio en construcción</option><option>Reforma / modernización</option><option>Obra particular</option><option>Otro</option></select></div>
+              <div class="field"><label for="mensaje">Mensaje</label><textarea id="mensaje" placeholder="Ubicación, cantidad de frentes, etapa de obra y plazo estimado."></textarea></div>
+              <button type="submit">Enviar consulta por WhatsApp</button>
+              <p class="fineprint">El formulario abre WhatsApp con el mensaje preparado.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container">© SHAFTEX — El frente del ascensor, resuelto.</div></footer>
+
+  <script>
+    function sendWhatsApp(event){
+      event.preventDefault();
+      const nombre = document.getElementById('nombre').value.trim();
+      const telefono = document.getElementById('telefono').value.trim();
+      const obra = document.getElementById('obra').value;
+      const mensaje = document.getElementById('mensaje').value.trim();
+      const text = `Hola, quiero solicitar una cotización para cerramiento de ascensores.%0A%0ANombre/empresa: ${encodeURIComponent(nombre)}%0ATeléfono: ${encodeURIComponent(telefono)}%0ATipo de obra: ${encodeURIComponent(obra)}%0AMensaje: ${encodeURIComponent(mensaje)}`;
+      window.open(`https://wa.me/59895333028?text=${text}`, '_blank');
+    }
+  </script>
+</body>
+</html>
